@@ -50,7 +50,7 @@ const App = () => {
         <div className="w-full h-full bg-gradient-to-tr from-blue-800/30 via-fuchsia-700/20 to-cyan-700/30 blur-2xl opacity-60 animate-gradient-move" />
       </div>
       <Navbar />
-      <main className="max-w-4xl mx-auto px-4">
+      <main className="max-w-screen-lg mx-auto px-4 sm:px-6">
         <section id="hero"><Hero /></section>
         <section id="about"><About /></section>
         <section id="experience"><Experience /></section>
