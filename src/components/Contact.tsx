@@ -26,29 +26,32 @@ const contacts = [
 
 const Contact = () => (
   <motion.div
-    className="py-12 text-center relative overflow-hidden"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.8 }}
+    style={{ padding: '3rem 0', textAlign: 'center', position: 'relative', overflow: 'hidden' }}
   >
     {/* Animated gradient background */}
     <div className="absolute inset-0 -z-10 bg-gradient-to-br from-blue-100 via-pink-100 to-yellow-100 opacity-80 blur-2xl" />
     <h2 className="text-2xl font-bold text-blue-700 mb-6 relative z-10">Get in Touch</h2>
     <div className="flex flex-col items-center gap-4 relative z-10">
       {contacts.map((c) => (
-        <motion.a
+        <motion.div
           key={c.label}
-          href={c.href}
-          target={c.href.startsWith('http') ? '_blank' : undefined}
-          rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-          className="flex items-center gap-3 text-gray-700 hover:text-blue-700 transition-colors text-lg bg-white/80 rounded-xl px-4 py-2 shadow hover:scale-105"
           whileHover={{ scale: 1.08, backgroundColor: '#e0e7ff' }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          {c.icon}
-          <span>{c.value}</span>
-        </motion.a>
+          <a
+            href={c.href}
+            target={c.href.startsWith('http') ? '_blank' : undefined}
+            rel={c.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            className="flex items-center gap-3 text-gray-700 hover:text-blue-700 transition-colors text-lg bg-white/80 px-4 py-2 shadow hover:scale-105 rounded-xl"
+          >
+            {c.icon}
+            <span>{c.value}</span>
+          </a>
+        </motion.div>
       ))}
     </div>
     <div className="mt-8 relative z-10">
