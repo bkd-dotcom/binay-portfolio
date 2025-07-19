@@ -3,9 +3,11 @@ import { motion } from "framer-motion";
 import { FaUserAstronaut } from "react-icons/fa";
 
 const typewriterText = "Hi, I'm Binay";
+const subtitleTypewriter = "I am passionate about Quantum Computing and Machine Learning, exploring their applications through research and impactful projects.";
 
 const Hero = () => {
   const [displayed, setDisplayed] = useState("");
+  const [displayedSubtitle, setDisplayedSubtitle] = useState("");
 
   useEffect(() => {
     let i = 0;
@@ -15,6 +17,19 @@ const Hero = () => {
       if (i === typewriterText.length) clearInterval(interval);
     }, 80);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    let i = 0;
+    const timeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        setDisplayedSubtitle(subtitleTypewriter.slice(0, i + 1));
+        i++;
+        if (i === subtitleTypewriter.length) clearInterval(interval);
+      }, 30);
+      return () => clearInterval(interval);
+    }, 1200); // start after main typewriter
+    return () => clearTimeout(timeout);
   }, []);
 
   return (
@@ -37,12 +52,13 @@ const Hero = () => {
         Computer Science and Mathematics Undergrad at Pennsylvania State University
       </motion.h2>
       <motion.p
-        className="max-w-2xl text-blue-100 text-lg sm:text-xl drop-shadow"
+        className="max-w-2xl text-blue-100 text-lg sm:text-xl drop-shadow min-h-[3.5rem]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.7 }}
       >
-        I am passionate about Quantum Computing and Machine Learning, exploring their applications through research and impactful projects.
+        {displayedSubtitle}
+        <span className="border-r-2 border-blue-100 animate-pulse ml-1" />
       </motion.p>
     </motion.div>
   );
