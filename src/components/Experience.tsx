@@ -1,14 +1,14 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { SiIbm, SiLockheedmartin, SiPython, SiQiskit, SiTensorflow, SiPytorch } from "react-icons/si";
-import { FaUniversity } from "react-icons/fa";
+import { SiPython, SiQiskit, SiTensorflow, SiPytorch } from "react-icons/si";
+import { FaUniversity, FaBuilding, FaIndustry } from "react-icons/fa";
 
 const experiences = [
   {
     title: "IBM AI Engineer Co-op Intern",
     location: "Midwest Client Engineering Team, State College, PA",
     date: "May 2025–Present",
-    logo: <SiIbm className="text-blue-900" size={32} />, // IBM logo
+    logo: <FaBuilding className="text-blue-900" size={32} />, // IBM creative logo
     bullets: [
       "Collaborating with the Midwest Client Engineering Team to design and deploy AI-powered solutions tailored for enterprise clients, focusing on natural language processing, generative AI, and machine learning.",
       "Building and optimizing scalable AI models using IBM Watson, Red Hat OpenShift, and foundational models for real-time client applications in cloud-native environments.",
@@ -18,7 +18,7 @@ const experiences = [
     title: "Lockheed Martin Machine Learning Engineer",
     location: "University Park, PA",
     date: "December 2024–April 2025",
-    logo: <SiLockheedmartin className="text-blue-700" size={32} />, // Lockheed Martin logo
+    logo: <FaIndustry className="text-blue-700" size={32} />, // Lockheed Martin creative logo
     bullets: [
       "Working on the Lockheed Martin 'Learned Virus Mitigation Project' under the Penn State Nittany AIAdvance. Developing machine learning models, including reinforcement learning, physics-informed neural networks and Neural ODEs (SEIRV), to predict virus spread, optimize containment strategies, and schedule care actions in dynamic scenarios.",
       "Integrating high-performance computing techniques with AI-driven simulations to enhance virus spread modeling, leveraging GPU acceleration and quantum computing methodologies for faster and more accurate predictions.",
