@@ -33,7 +33,7 @@ const techIcons: Record<string, JSX.Element> = {
 
 const Projects = () => (
   <motion.div
-    className="py-12 relative overflow-hidden"
+    className="py-12 w-full relative overflow-hidden"
     initial={{ opacity: 0, y: 40 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
@@ -42,23 +42,23 @@ const Projects = () => (
     {/* Animated gradient background */}
     <div className="absolute inset-0 -z-10 bg-gradient-to-br from-pink-100 via-blue-100 to-yellow-100 opacity-80 blur-2xl" />
     <h2 className="text-2xl font-bold text-blue-700 mb-6 text-center relative z-10">Projects</h2>
-    <div className="grid gap-8 md:grid-cols-2 relative z-10">
+    <div className="grid gap-8 md:grid-cols-2 relative z-10 w-full">
       {projects.map((proj, idx) => (
         <motion.div
           key={idx}
-          className="bg-white/80 rounded-lg shadow-xl p-6 border border-gray-100 flex flex-col hover:scale-105 transition-transform"
+          className="w-full bg-white/80 rounded-lg shadow-xl border border-gray-100 flex flex-col hover:scale-105 transition-transform"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           whileHover={{ scale: 1.07, boxShadow: "0 8px 32px 0 rgba(31, 38, 135, 0.37)" }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: idx * 0.1 }}
         >
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex items-center gap-3 mb-2 px-4 sm:px-8 pt-6">
             {proj.icon}
             <h3 className="text-lg font-semibold text-gray-800">{proj.title}</h3>
           </div>
-          <p className="text-gray-700 mb-4 text-sm">{proj.description}</p>
-          <div className="flex gap-3 mb-4">
+          <p className="text-gray-700 mb-4 text-sm px-4 sm:px-8">{proj.description}</p>
+          <div className="flex gap-3 mb-4 px-4 sm:px-8">
             {proj.tech.map((tech) => (
               <span key={tech} title={tech}>{techIcons[tech] || tech}</span>
             ))}
@@ -67,7 +67,7 @@ const Projects = () => (
             href={proj.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-auto text-blue-600 hover:underline text-sm font-medium"
+            className="mt-auto text-blue-600 hover:underline text-sm font-medium px-4 sm:px-8 pb-6"
           >
             View on GitHub
           </a>
